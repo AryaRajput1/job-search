@@ -5,8 +5,14 @@ import { RouterLinkStub } from '@vue/test-utils'
 
 describe('MainNav', () => {
   it('should show the company name', () => {
+    const $route={
+      name:"Home"
+    }
     render(MainNav, {
       global: {
+        mocks:{
+          $route
+        },
         stubs: {
           FontAwesomeIcon: true,
           RouterLink: RouterLinkStub
@@ -18,10 +24,17 @@ describe('MainNav', () => {
   })
 
   it('should show the navigation links', () => {
+    const $route={
+      name:"Home"
+    }
     render(MainNav, {
       global: {
+        mocks:{
+          $route
+        },
         stubs: {
-          FontAwesomeIcon: true
+          FontAwesomeIcon: true,
+          RouterLink: RouterLinkStub
         }
       }
     });
@@ -34,10 +47,17 @@ describe('MainNav', () => {
 
   describe('when user logs in', () => {
     it('should Log in', async () => {
+      const $route={
+        name:"Home"
+      }
       render(MainNav, {
         global: {
+          mocks:{
+            $route
+          },
           stubs: {
-            FontAwesomeIcon: true
+            FontAwesomeIcon: true,
+            RouterLink: RouterLinkStub
           }
         }
       });

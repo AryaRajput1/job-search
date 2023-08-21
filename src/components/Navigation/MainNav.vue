@@ -12,11 +12,11 @@
             <li
               v-for="menuItem in menuItems"
               class="ml-9 h-full first:m-0"
-              :key="menuItem"
+              :key="menuItem.text"
             >
-              <a class="flex h-full items-center py-2.5 cursor-pointer">{{
-                menuItem
-              }}</a>
+              <router-link :to="menuItem.url" class="flex h-full items-center py-2.5 cursor-pointer">{{
+                menuItem.text
+              }}</router-link>
             </li>
           </ul>
         </nav>
@@ -50,11 +50,26 @@ export default {
     return {
       company: "Job Careers",
       menuItems: [
-        "Teams",
-        "Location",
-        "Life at Job Careers",
-        "Students",
-        "Jobs",
+        {
+          text:"Teams",
+          url:'/'
+        },
+        {
+          text:"Location",
+          url:'/'
+        },
+        {
+          text:"Life at Job Careers",
+          url:'/'
+        },
+        {
+          text:"Students",
+          url:'/'
+        },
+        {
+          text:"Jobs",
+          url:'/jobs/results'
+        }
       ],
       isLoggedIn: false,
     };

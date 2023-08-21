@@ -6,13 +6,14 @@ describe('TheSubnav', () => {
     describe('when user is on jobs page', () => {
 
         it('should display the jobs count', () => {
+            const $route = {
+                name:"JobResults"
+            }
             render(TheSubnav, {
-                data() {
-                    return {
-                        onJobResultPage: true,
-                    }
-                },
                 global: {
+                    mocks: {
+                        $route
+                    },
                     stubs: {
                         FontAwesomeIcon: true
                     }
@@ -25,16 +26,15 @@ describe('TheSubnav', () => {
         })
     })
     describe('when user is not on jobs page', () => {
-
         it('should not display the jobs count', () => {
+            const $route = {
+                name:"Home"
+            }
             render(TheSubnav, {
-                data() {
-                    return {
-                        onJobResultPage: false,
-                    }
-                }
-                ,
                 global: {
+                    mocks:{
+                    $route
+                    },
                     stubs: {
                         FontAwesomeIcon: true
                     }

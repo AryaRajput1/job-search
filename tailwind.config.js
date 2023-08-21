@@ -10,6 +10,9 @@ module.exports = {
       },
       colors:{
         "brand-gray-1":"#dadce0",
+        "brand-gray-2":"#f8f9fa",
+        "brand-gray-3":"#80868b",
+        "brand-gray-4":"#cbd5e0",
         "brand-blue-1":"#1967d2",
         "brand-blue-2":"#4285F4",
         "brand-green-1":"#137333",
